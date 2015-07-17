@@ -35,13 +35,13 @@ I've tested the plugin on Barracuda appliances F100b, F200b, F200c, F600c and F8
 ### Test on command line
 If you are in the Nagios plugin directory execute this command:
 
-<pre><code>
+```
 ./check_usolved_barracuda_temperature.py -H ip_address_of_barracuda -C snmp_community
-</code></pre>
+```
 
 The output could be something like this:
 
-<pre><code>
+```
 OK - 8 fans / CPU Temperature: 49.5 *C, Mainboard Temperature: 23.0 *C
 Chassis Fan 1A: 1917 RPM
 Chassis Fan 1B: 2109 RPM
@@ -53,11 +53,11 @@ Chassis Fan 4A: 2481 RPM
 Chassis Fan 4B: 2909 RPM
 CPU Temperature: 49.5 *C
 Mainboard Temperature: 23.0 *C
-</code></pre>
+```
 
 Here are all arguments that can be used within this plugin:
 
-<pre><code>
+```
 -H &lt;host address&gt;
 Required: IP or hostname of the Barracuda firewall node with a running snmp service
 
@@ -81,7 +81,7 @@ Optional: Write -P yes if you like to have performance data
 
 [-T &lt;timeout&gt;]
 Optional: SNMP timeout in seconds. Default is 30 seconds.
-</code></pre>
+```
 
 ### Install in Nagios
 
@@ -89,34 +89,34 @@ Edit your **commands.cfg** and add the following.
 
 Example for checking the temperature with performande data enabled (detecting not working fans works by default):
 
-<pre><code>
+```
 define command {
     command_name    check_usolved_barracuda_temperature
     command_line    $USER1$/check_usolved_barracuda_temperature.py -H $HOSTADDRESS$ -P yes -C public -w $ARG1$ -c $ARG2$
 }
-</code></pre>
+```
 
 Example for just checking the fans (if they are not spinning anymore a critical will be thrown):
 
-<pre><code>
+```
 define command {
     command_name    check_usolved_barracuda_temperature
     command_line    $USER1$/check_usolved_barracuda_temperature.py -H $HOSTADDRESS$ -P yes -C public -O fan
 }
-</code></pre>
+```
 
 Edit your **services.cfg** and add the following.
 
 Example for checking the temperature:
 
-<pre><code>
+```
 define service{
 	host_name				Test-Server
 	service_description		Barracuda-Temperature
 	use						generic-service
 	check_command			check_usolved_barracuda_temperature!60!70
 }
-</code></pre>
+```
 
 
 You could also use host macros for the snmp community.
