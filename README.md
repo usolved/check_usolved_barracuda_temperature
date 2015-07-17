@@ -58,28 +58,28 @@ Mainboard Temperature: 23.0 *C
 Here are all arguments that can be used within this plugin:
 
 ```
--H &lt;host address&gt;
+-H <host address>;
 Required: IP or hostname of the Barracuda firewall node with a running snmp service
 
-[-C &lt;snmp community&gt;]
+[-C <snmp community>]
 Optional: SNMP Community String
 
-[-V &lt;snmp version&gt;]
+[-V <snmp version>]
 Optional: SNMP version 1 or 2c are supported, if argument not given version 2 is used by default
 
-[-O &lt;object&gt;]
+[-O <object>]
 Optional: temp or fan. If no object is given fans and temperature will be checked
 
-[-w &lt;warning&gt;]
+[-w <warning>]
 Optional: Warning threshold for the temperature in degree celsius
 
-[-c &lt;critical&gt;]
+[-c <critical>]
 Optional: Critical threshold for the temperature in degree celsius
 
-[-P &lt;perfdata&gt;]
+[-P <perfdata>]
 Optional: Write -P yes if you like to have performance data
 
-[-T &lt;timeout&gt;]
+[-T <timeout>]
 Optional: SNMP timeout in seconds. Default is 30 seconds.
 ```
 
