@@ -58,7 +58,7 @@ Mainboard Temperature: 23.0 *C
 Here are all arguments that can be used within this plugin:
 
 ```
--H <host address>;
+-H <host address>
 Required: IP or hostname of the Barracuda firewall node with a running snmp service
 
 [-C <snmp community>]
