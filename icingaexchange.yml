@@ -1,0 +1,18 @@
+name: check_usolved_barracuda_temperature
+description: "file:///README.md"
+url: "https://github.com/usolved/check_usolved_barracuda_temperature"
+tags: Barracuda,Firewall
+vendor: Barracuda
+target: Temperature,Sensor,Snmp
+type: Plugin
+license: gplv3
+releases: 
+  - 
+    name: 1.0
+    description: "Initial release"
+    files: 
+      - 
+        name: check_usolved_barracuda_temperature.py
+        url: "file:///check_usolved_barracuda_temperature.py"
+        description: "Initial release"
+        checksum: e0fe0a29645f32559cd0918256b985f8
