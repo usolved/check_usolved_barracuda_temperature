@@ -10,7 +10,7 @@ The plugin also returns performance data for the temperature sensors.
 
 ## Authors
 
-Ricardo Klement (www.usolved.net)
+Ricardo Klement ([www.usolved.net](http://usolved.net))
 
 ## Installation
 
@@ -120,3 +120,8 @@ define service{
 
 
 You could also use host macros for the snmp community.
+
+## What's new
+
+v1.0 2015-07-17
+Initial release
