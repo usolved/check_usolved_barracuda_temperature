@@ -24,6 +24,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------
 
+v1.1 2015-07-22
+Fixed output when snmpwalk returned quotes in string
+
 v1.0 2015-07-17
 Initial release
 
@@ -103,7 +106,7 @@ def get_sensors_execute(cmdline):
 
 
 	for line in cmdline_return.readlines():
-		sensor.append(line.rstrip())
+		sensor.append(line.rstrip().replace('"',''))
 
 	cmdline_return_code = cmdline_return.close()
 	return sensor
@@ -112,7 +115,7 @@ def get_sensors_execute(cmdline):
 
 def get_sensors():
 
-	cmdline_snmp 		= cmd['SNMP_Walk']+' -v '+arg_snmp_version+' -c '+arg_snmp_community+' -OqevU -t '+ str(arg_timeout) +' '+arg_hostname
+	cmdline_snmp 		= cmd['SNMP_Walk']+' -v '+arg_snmp_version+' -c '+arg_snmp_community+' -OqevtU -t '+ str(arg_timeout) +' '+arg_hostname
 	cmdline_oid_name 	= oid['Sensors']+oid['Name']
 	cmdline_oid_type 	= oid['Sensors']+oid['Type']
 	cmdline_oid_value 	= oid['Sensors']+oid['Value']
@@ -223,9 +226,6 @@ def check_sensors(sensors):
 
 
 		sensor_output = sensor_output[:-3]
-
-		#if return_msg_put_temp:
-			#sensor_output += " - " + return_msg_put_temp[:-2]
 
 
 		# if sensor_output is not empty then sensors where found
