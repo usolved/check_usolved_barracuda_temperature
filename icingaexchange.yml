@@ -8,11 +8,11 @@ type: Plugin
 license: gplv3
 releases: 
   - 
-    name: 1.0
-    description: "Initial release"
+    name: 1.1
+    description: "Fixed output when snmpwalk returned quotes in string"
     files: 
       - 
         name: check_usolved_barracuda_temperature.py
         url: "file:///check_usolved_barracuda_temperature.py"
-        description: "Initial release"
+        description: "Release 1.1"
         checksum: e0fe0a29645f32559cd0918256b985f8
