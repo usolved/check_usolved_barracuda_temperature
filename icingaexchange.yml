@@ -15,4 +15,4 @@ releases:
         name: check_usolved_barracuda_temperature.py
         url: "file:///check_usolved_barracuda_temperature.py"
         description: "Release 1.1"
-        checksum: e0fe0a29645f32559cd0918256b985f8
+        checksum: dab9fe49f2909d7aa21fbf09d68d2400
