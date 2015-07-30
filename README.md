@@ -123,5 +123,8 @@ You could also use host macros for the snmp community.
 
 ## What's new
 
+v1.1 2015-07-22
+Fixed output when snmpwalk returned quotes in string
+
 v1.0 2015-07-17
 Initial release
