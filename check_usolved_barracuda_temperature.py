@@ -24,6 +24,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 ------------------------
 
+v1.2 2015-11-10
+Fixed perfdata and replaced spaces with a "-"
+
 v1.1 2015-07-22
 Fixed output when snmpwalk returned quotes in string
 
@@ -31,7 +34,6 @@ v1.0 2015-07-17
 Initial release
 
 '''
-
 
 ######################################################################
 # Import modules
@@ -204,7 +206,8 @@ def check_sensors(sensors):
 			return_msg_put_temp 	+= sensor_data['name'] + ": " + str(sensor_value_float) + " *C, "
 
 			if arg_perfdata == 'yes':
-				return_perfdata_put += sensor_data['name'] + '=' + str(sensor_value_float) + ', '
+				sensor_data['name'] = sensor_data['name'].replace(" ", "-")
+				return_perfdata_put += sensor_data['name'] + '=' + str(sensor_value_float) + ' '
 
 
 	# put together the output message
@@ -254,7 +257,7 @@ def check_sensors(sensors):
 	# if perfdata found
 
 	if return_perfdata_put:
-		return_perfdata = return_perfdata_put[:-2]
+		return_perfdata = return_perfdata_put[:-1]
 
 
 	return return_code[return_key]

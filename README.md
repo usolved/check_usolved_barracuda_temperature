@@ -123,6 +123,9 @@ You could also use host macros for the snmp community.
 
 ## What's new
 
+v1.2 2015-11-10
+Fixed perfdata and replaced spaces with a "-"
+
 v1.1 2015-07-22
 Fixed output when snmpwalk returned quotes in string
 
